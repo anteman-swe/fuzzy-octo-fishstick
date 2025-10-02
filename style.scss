@@ -1,0 +1,192 @@
+*, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    max-height: 96vh;
+    margin: 2vh 1vw 2vh 1vw;
+    padding-top: 10vh;
+    background-color: #3a3f4a;
+    background-image: url('../images/5073414_large.jpg');
+    background-repeat: repeat;
+    background-position: center top;
+    background-clip: content-box;
+    background-size: 100%;
+    border: 4px double black;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+
+}
+
+header {
+    width: 100%;
+    text-align:center;
+
+    h1 {
+        
+        font-size: 2.5rem;
+        color: ghostwhite;
+        text-shadow: 4px 4px 0px black;
+    }
+}
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+
+    h3 {
+        font-size: 1.5rem;
+    }
+    .input-container {
+        width: 40%;
+        min-height: 30vh;
+        height: fit-content;
+        max-width: 30vmax;
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 2rem;
+        background-color: rgba($color: #ffffff, $alpha: 0.8);
+        h1 {
+            width: 100%;
+            text-align: left;
+        }
+        #newTaskInput {
+            min-width: 98%;
+            height: 2rem;
+            border: 2px solid deepskyblue;
+            border-radius: 10px;
+            margin:auto;
+            padding-left: 0.5rem;
+            background-color: rgba($color: #ffffff, $alpha: 0.4);
+            font-weight: bolder;
+            color: black;  
+        }
+        #newTaskInput:focus {
+            outline: none;
+            border: 2px solid blue;
+        }
+        .button-container {
+            margin-top: 10px;
+            width: 100%;
+            text-align: right;
+            padding-right: 10px;
+            #addButton {
+                width: 50px;
+                height: 50px;
+                border: 2px solid rgba($color: #00aaff, $alpha: 0.8);
+                border-radius: 50%;
+                background-color: rgba(0, 115, 223, 0.8);
+                font-weight: 600;
+                color:ghostwhite;
+                cursor: pointer;
+            }
+            #addButton:active{
+                transform: translate(1px, 1px);
+                border: 2px solid rgba($color: #ffffff, $alpha: 0.8);
+                color: white;
+            }
+        }
+        
+        #task-already-exist {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: red;
+        }
+    }
+
+    #tasklist {
+        width: 40%;
+        min-height: 30vh;
+        height: fit-content;
+        max-width: 30vmax;
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 2rem;
+        background-color: rgba($color: #ffffff, $alpha: 0.8);
+        // padding: 2rem;
+        // width: 40%;
+        // max-width: 40vmin;
+        // // margin-top: 2rem;
+        // background-color: hsla(134, 153, 139, 0.8);
+        // border: 2px solid black;
+        // border-radius: 30px;
+        h3 {
+            margin-right: 1rem;
+        }
+        #tasklist-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            #readyItems {
+                width: 250px;
+                height: fit-content;
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 5px;
+                // border: 1px solid black;
+                border-radius: 10px;
+            }
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            width: 100%;
+            border-bottom: 1px dotted rgb(255, 255, 255);
+            display: flex;
+            align-items: baseline;
+            position: relative;
+            padding-left: 0;
+            cursor: pointer;
+            .list-text-content {
+                
+                margin-right: auto;
+                flex-grow: 1;
+            }
+        }
+        li::before {
+            content: "𐤏";
+            color: red; /* Snygg färg på markören */
+            font-size: 1rem;
+            margin-right: 8px; /* Ger lite luft mellan markör och text */
+            flex-shrink: 0; 
+        }      
+        .explanation {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+        .undo-expl {
+            font-size: 12px;
+            margin-top: 0;
+        }
+        .itemDone {
+            color: greenyellow;
+            text-decoration: line-through;
+            text-shadow: 0 0 3px black;
+        }
+        
+        .material-symbols-outlined {
+            vertical-align: bottom;
+            font-size: 1rem;
+            font-variation-settings:
+                'FILL' 0.2,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    }
+}
+

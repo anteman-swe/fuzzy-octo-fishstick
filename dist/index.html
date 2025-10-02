@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antemans Automagiska ToDo-lista</title>
+    <!-- Import of trashcan icon from Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Antemans Automagiska ToDo-lista</h1>
+    </header>
+    <main>
+        <!-- Section with input -->
+        <section class="input-container">
+            <h3>Lägg till en ny uppgift</h3>
+            <input type="text" id="newTaskInput" placeholder="Lägg till en ny uppgift här...">
+            <div class="button-container"><button id="addButton">Lägg till</button></div>
+            <div id="task-already-exist"></div>
+        </section>
+        <!-- Section with my tasklist -->
+        <section id="tasklist">
+            <div id="tasklist-container"><h3>Uppgifter</h3><p id="readyItems"></p></div>
+            <p class="explanation">Klicka på en uppgift för att klarmarkera</p>
+            <p class="undo-expl">En uppgift som klarmarkerats kan ångras med ett klick och raderas med dubbelklick eller skräpkorgen</p>
+            <ul id="todoList">
+            </ul>
+        </section>          
+    </main>
+    <script type="module" src="scripts/myscript.js"></script> <!-- Script that controls the todo-list-->
+
+</body>
+</html>

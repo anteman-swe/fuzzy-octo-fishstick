@@ -1,0 +1,28 @@
+{
+  "name": "antemans-todo-list-typescript-version",
+  "version": "1.0.0",
+  "description": "Antemans automagiska ToDo lista, uppgift 4 i Intro till webbutveckling, SJPI25",
+  "keywords": [
+    "Javascript",
+    "beginner"
+  ],
+  "homepage": "https://github.com/anteman-swe/super-spoon#readme",
+  "bugs": {
+    "url": "https://github.com/anteman-swe/super-spoon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anteman-swe/super-spoon.git"
+  },
+  "license": "ISC",
+  "author": "Anders Eriksson",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.7",
+    "tsc": "^2.0.4"
+  }
+}

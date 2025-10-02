@@ -2,3 +2,8 @@
 *.css.map
 *.sass.map
 *.scss.map
+**/*.d.ts
+**/*.js.map
+**/*.ts.map
+**/*safeBackup*
+node_modules
