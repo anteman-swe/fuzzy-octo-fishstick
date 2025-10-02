@@ -25,7 +25,7 @@ const saveToLocal = (itemToSave: todoItem, index: number = (todoList.length - 1)
 }
 
 // Function to update tasks in local storage
-const updateLocalDone = (item: todoItem, state: boolean) => {
+const updateLocalDone = (item: number, state: boolean) => {
     let itemTochange: todoItem = JSON.parse(localStorage.getItem(`task${item}`) as string);
     let itemToLoadBack: todoItem = {todo: itemTochange.todo, done: state};
     localStorage.setItem(`task${item}`, JSON.stringify(itemToLoadBack));
@@ -101,15 +101,14 @@ const updateReady = (readyCount: number): void => {
 // Function to run first of all after page is loaded so listeners is added and todo-list gets loaded into the DOM
 function firstRun(): void {
     // Making sure the input field is clean at start
-    cleanInputField();
-    // Adding listeners if addButton and inputField exists, if not log out an error message in console
+    cleanInputField()
+    // Adding listeners if addButton and inputField exists, if not throw a new error
     if (addButton && inputField) {
         addButton.addEventListener('click', addToDo);
         inputField.addEventListener('keydown', (event: KeyboardEvent) => {
             if (event.key == 'Enter') {
                 addToDo();
             }
-            return;
         });
     }
     else {
@@ -143,7 +142,7 @@ const resetWarning = (): void => {
 }
 
 // Clean the input field
-const cleanInputField = () => {
+const cleanInputField = (): void => {
     if (inputField) {
         inputField.value = "";
     } else {
@@ -189,7 +188,7 @@ const changeTask = (klick: MouseEvent): void => {
                 readyItemCounter--;
             }
             // We also update the task in localStorage
-            updateLocalDone(todoList[itemToChange], false);
+            updateLocalDone(itemToChange, false);
         } else {
             // Else we will set the item as done
             whichItem.classList.add('itemDone');
@@ -197,7 +196,7 @@ const changeTask = (klick: MouseEvent): void => {
             readyItemCounter++;
 
             // We also update the task in localStorage
-            updateLocalDone(todoList[itemToChange], true);
+            updateLocalDone(itemToChange, true);
         }
         
         // Update visible readycounter

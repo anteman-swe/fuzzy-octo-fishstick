@@ -83,14 +83,13 @@ const updateReady = (readyCount) => {
 function firstRun() {
     // Making sure the input field is clean at start
     cleanInputField();
-    // Adding listeners if addButton and inputField exists, if not log out an error message in console
+    // Adding listeners if addButton and inputField exists, if not throw a new error
     if (addButton && inputField) {
         addButton.addEventListener('click', addToDo);
         inputField.addEventListener('keydown', (event) => {
             if (event.key == 'Enter') {
                 addToDo();
             }
-            return;
         });
     }
     else {
@@ -164,7 +163,7 @@ const changeTask = (klick) => {
                 readyItemCounter--;
             }
             // We also update the task in localStorage
-            updateLocalDone(todoList[itemToChange], false);
+            updateLocalDone(itemToChange, false);
         }
         else {
             // Else we will set the item as done
@@ -172,7 +171,7 @@ const changeTask = (klick) => {
             todoList[itemToChange].done = true;
             readyItemCounter++;
             // We also update the task in localStorage
-            updateLocalDone(todoList[itemToChange], true);
+            updateLocalDone(itemToChange, true);
         }
         // Update visible readycounter
         updateReady(readyItemCounter);
